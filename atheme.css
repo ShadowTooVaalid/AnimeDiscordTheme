@@ -2,60 +2,50 @@
    VARIABLES
 ========================= */
 :root {
-    --bg-image: url("https://cdn.jsdelivr.net/gh/USERNAME/REPO/assets/background.jpg");
-    --bg-blur: 12px;
-    --bg-darkness: 0.55;
+    --bg-image: url("https://cdn.jsdelivr.net/gh/ShadowTooVaalid/AnimeDiscordTheme/assets/background.jpg");
+    --bg-blur: 10px;
+    --bg-darkness: 0.6;
 
-    --panel-bg: rgba(25, 25, 35, 0.55);
-    --panel-border: rgba(255,255,255,0.08);
+    --panel-bg: rgba(25, 25, 35, 0.5);
+    --panel-border: rgba(255,255,255,0.06);
 
-    --radius: 14px;
+    --radius: 12px;
 }
 
 /* =========================
-   BACKGROUND (FIXED)
+   HARD BACKGROUND FIX
 ========================= */
-.appMount-2yBXZl {
+html, body, #app-mount {
     background: transparent !important;
 }
 
-body {
-    background: transparent !important;
-}
-
-/* Real background layer */
-.appMount-2yBXZl::before {
+#app-mount::before {
     content: "";
     position: fixed;
     inset: 0;
     background: var(--bg-image) center/cover no-repeat;
-    z-index: -2;
+    z-index: -1000;
 }
 
-/* Blur + dark overlay */
-.appMount-2yBXZl::after {
+#app-mount::after {
     content: "";
     position: fixed;
     inset: 0;
     backdrop-filter: blur(var(--bg-blur));
     background: rgba(10, 10, 20, var(--bg-darkness));
-    z-index: -1;
+    z-index: -999;
 }
 
 /* =========================
-   REMOVE DISCORD BACKGROUNDS
+   REMOVE DEFAULT BACKGROUNDS
 ========================= */
 .theme-dark,
-.theme-dark .container-1NXEtd,
-.theme-dark .chat-2ZfjoI,
-.theme-dark .members-3WRCEx,
-.theme-dark .container-2cd8Mz,
-.theme-dark .sidebar-1tnWFu {
-    background: transparent !important;
+.theme-dark * {
+    background-color: transparent !important;
 }
 
 /* =========================
-   GLASS PANELS
+   GLASS PANELS (SAFE)
 ========================= */
 .container-1NXEtd,
 .chat-2ZfjoI,
@@ -64,33 +54,21 @@ body {
 .sidebar-1tnWFu,
 .panels-3wFtMD {
     background: var(--panel-bg) !important;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     border-radius: var(--radius);
     border: 1px solid var(--panel-border);
 }
 
 /* =========================
-   SAFE ROUNDED UI (NOT GLOBAL)
+   SAFE FONT
 ========================= */
-.container-1NXEtd,
-.chat-2ZfjoI,
-.members-3WRCEx,
-.sidebar-1tnWFu,
-.panels-3wFtMD,
-.scrollableContainer-15eg7h {
-    border-radius: var(--radius) !important;
-}
-
-/* =========================
-   FONT
-========================= */
-body, button, input, textarea {
+body {
     font-family: "JetBrainsMono Nerd Font", monospace !important;
     font-weight: 700 !important;
 }
 
 /* =========================
-   ANIMATIONS
+   ANIMATIONS (LIGHT)
 ========================= */
 .channel-1Shao0,
 .member-2gU6Ar {
@@ -99,34 +77,16 @@ body, button, input, textarea {
 
 .channel-1Shao0:hover,
 .member-2gU6Ar:hover {
-    background: rgba(255,255,255,0.1) !important;
-    transform: translateY(-1px);
+    background: rgba(255,255,255,0.08) !important;
 }
 
 /* =========================
-   SERVER LIST (2 COLUMNS)
+   SERVER GRID (SAFE)
 ========================= */
-.guilds-2JjMmN {
-    width: 130px !important;
-}
-
 .guilds-2JjMmN ul {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
-    justify-items: center;
-}
-
-/* =========================
-   SCROLLBAR
-========================= */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.2);
-    border-radius: 10px;
 }
 
 .appMount-2yBXZl::before {
