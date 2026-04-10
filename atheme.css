@@ -45,25 +45,10 @@ html, body, #app-mount {
 }
 
 /* =========================
-   GLASS PANELS (SAFE)
-========================= */
-.container-1NXEtd,
-.chat-2ZfjoI,
-.members-3WRCEx,
-.container-2cd8Mz,
-.sidebar-1tnWFu,
-.panels-3wFtMD {
-    background: var(--panel-bg) !important;
-    backdrop-filter: blur(8px);
-    border-radius: var(--radius);
-    border: 1px solid var(--panel-border);
-}
-
-/* =========================
    SAFE FONT
 ========================= */
 body {
-    font-family: "JetBrainsMono Nerd Font", monospace !important;
+    font-family: "JetBrainsMono Nerd Font Propo", monospace !important;
     font-weight: 700 !important;
 }
 
